@@ -3,7 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Zenarmor Project Review</title>
+<title>Zenarmor SASE for OPNsense: Build a Full Network Security Stack on OPNsense with Zenarmor</title>
+<meta name="description" content="Combine NGFW, ZTNA, secure web gateway, and cloud-native management into one SASE platform, delivered on the OPNsense firewalls you already operate." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -22,77 +23,288 @@
   }
 </script>
 <style>
-  body { font-family: 'Inter', sans-serif; background: radial-gradient(circle at top, #f8fafc 0%, #f1f5f9 100%); min-height: 100vh; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', ui-sans-serif, system-ui, sans-serif; letter-spacing: -0.01em; }
+  h1, h2, h3 { letter-spacing: -0.025em; }
+  .check::before { content: "✓"; color: #ff8b00; font-weight: 700; margin-right: .5rem; }
+  .xmark::before { content: "✕"; color: #94a3b8; font-weight: 700; margin-right: .5rem; }
 </style>
 </head>
-<body class="flex items-center justify-center p-6 antialiased">
+<body class="bg-white text-slate-800 antialiased">
 
-<div class="max-w-4xl w-full text-center">
-  <!-- LOGO -->
-  <div class="mb-12 flex justify-center">
-    <img src="zenarmor-logo-type-basic.png" alt="Zenarmor" class="h-10 w-auto" />
+<!-- NAV -->
+<header class="border-b border-slate-100">
+  <div class="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <img src="logo.png" alt="Zenarmor" class="h-7 w-auto" />
+      <span class="text-slate-300 hidden sm:inline">|</span>
+      <span class="hidden sm:inline font-semibold text-navy-900 tracking-tight">SASE for OPNsense</span>
+    </div>
+    <a href="#demo" class="inline-flex items-center px-5 py-2.5 rounded-xl bg-orange-500 text-white font-semibold hover:bg-orange-600 transition shadow-sm">Request a Demo</a>
   </div>
+</header>
 
-  <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">Project Review</h1>
-  <p class="text-slate-600 mb-12">Select a version below to review the latest design updates.</p>
-
-  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-    <!-- NGFW CARD -->
-    <a href="ngfw/index.html" class="group bg-white p-8 rounded-2xl border border-slate-200 shadow-sm hover:shadow-xl hover:border-orange-500/50 transition-all duration-300 text-left">
-      <div class="w-12 h-12 rounded-xl bg-orange-50 text-orange-500 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-        </svg>
-      </div>
-      <h3 class="text-xl font-bold text-slate-900 mb-2">NGFW</h3>
-      <p class="text-sm text-slate-500 leading-relaxed">Enterprise-grade next-gen firewall power for your OPNsense nodes.</p>
-      <div class="mt-6 flex items-center text-orange-500 font-semibold text-sm">
-        Review Page
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-        </svg>
-      </div>
-    </a>
-
-    <!-- SASE CARD -->
-    <a href="sase/index.html" class="group bg-white p-8 rounded-2xl border border-slate-200 shadow-sm hover:shadow-xl hover:border-navy-500/50 transition-all duration-300 text-left">
-      <div class="w-12 h-12 rounded-xl bg-navy-50 text-navy-500 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-        </svg>
-      </div>
-      <h3 class="text-xl font-bold text-slate-900 mb-2">SASE</h3>
-      <p class="text-sm text-slate-500 leading-relaxed">Build a full SASE edge on the firewalls you already operate.</p>
-      <div class="mt-6 flex items-center text-navy-500 font-semibold text-sm">
-        Review Page
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-        </svg>
-      </div>
-    </a>
-
-    <!-- SASE NEW MESSAGING CARD -->
-    <a href="sase-new-messaging/index.html" class="group bg-white p-8 rounded-2xl border border-slate-200 shadow-sm hover:shadow-xl hover:border-emerald-500/50 transition-all duration-300 text-left">
-      <div class="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-500 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h6m-6 4h10M5 21h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v14a2 2 0 002 2z" />
-        </svg>
-      </div>
-      <h3 class="text-xl font-bold text-slate-900 mb-2">SASE (New Messaging)</h3>
-      <p class="text-sm text-slate-500 leading-relaxed">MSSP-focused messaging that ties each product claim to a concrete business outcome.</p>
-      <div class="mt-6 flex items-center text-emerald-500 font-semibold text-sm">
-        Review Page
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-        </svg>
-      </div>
-    </a>
+<!-- HERO -->
+<section class="px-6 pt-20 pb-24">
+  <div class="max-w-4xl mx-auto text-center">
+    <p class="text-base font-bold tracking-wider uppercase text-orange-500 mb-5">Built for OPNsense</p>
+    <h1 class="text-4xl sm:text-6xl font-extrabold text-slate-900 leading-tight mb-6">
+      Build a Full Network Security<br />
+      <span class="bg-gradient-to-r from-slate-900 via-[#0057FF] to-[#F2AA55] bg-clip-text text-transparent">Stack on OPNsense<br />With Zenarmor.</span>
+    </h1>
+    <div class="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto mb-10 space-y-4">
+      <p>NGFW, ZTNA, secure web gateway, and cloud-native management unified into one platform. Distributed, flexible network security for users and data wherever they are, on network or off, extending traditional 24&times;7&times;365 gateway protection to remote, hybrid, and mobile users and cloud workloads.</p>
+      <p class="font-medium text-slate-700">Unified, simple, and fast enterprise SASE, delivered through the sovereign OPNsense nodes you already operate.</p>
+    </div>
+    <a href="#demo" class="inline-flex items-center px-7 py-3.5 rounded-xl bg-orange-500 text-white font-medium hover:bg-orange-600 transition shadow-sm">Request a Demo</a>
+    <p class="text-sm text-slate-500 mt-5">Deploys in minutes. No cloud backhaul. No vendor lock-in.</p>
   </div>
+</section>
 
-  <footer class="mt-16 text-slate-400 text-xs uppercase tracking-widest font-semibold">
-    Internal Review Only
-  </footer>
-</div>
+<!-- COMPARISON -->
+<section class="px-6 py-20 bg-slate-50">
+  <div class="max-w-5xl mx-auto">
+    <h2 class="text-3xl sm:text-4xl font-semibold text-center text-slate-900 mb-14">Cloud-Only SASE vs. Zenarmor SASE on OPNsense</h2>
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="bg-white rounded-2xl p-8 border border-slate-200">
+        <h3 class="font-semibold text-slate-900 mb-5">Cloud-Only SASE (Zscaler, Cato, Netskope)</h3>
+        <ul class="space-y-3 text-slate-600">
+          <li class="xmark">All traffic routed through vendor PoPs</li>
+          <li class="xmark">Latency tax on every SaaS connection</li>
+          <li class="xmark">Per-user, per-module license sprawl</li>
+          <li class="xmark">No control over inspection location</li>
+          <li class="xmark">Hard dependency on vendor cloud uptime</li>
+          <li class="xmark">Existing firewalls become redundant</li>
+        </ul>
+      </div>
+      <div class="bg-white rounded-2xl p-8 border-2 border-navy-900 shadow-sm">
+        <h3 class="font-semibold text-navy-900 mb-5">Zenarmor SASE on OPNsense</h3>
+        <ul class="space-y-3 text-slate-700">
+          <li class="check">Inspection at your edge, no backhaul</li>
+          <li class="check">Direct-to-SaaS, direct-to-app performance</li>
+          <li class="check">One platform: NGFW + ZTNA + SWG + analytics</li>
+          <li class="check">You choose where data is processed</li>
+          <li class="check">Cloud-managed, but edge-enforced</li>
+          <li class="check">Extends, not replaces, your OPNsense</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- CEO themes: real-world working scenarios, 24x7x365 ZTNA, sovereignty, speed/simplicity, benefit-led -->
+    <p class="text-center text-slate-600 text-base sm:text-lg mt-10 leading-relaxed">
+      Built for how people actually work, in the office, at home, in a coffee shop, on a plane. <span class="font-semibold text-navy-900">24&times;7&times;365 ZTNA-grade inspection</span> follows your users and data wherever they go, on the sovereign OPNsense infrastructure you already operate.
+    </p>
+    <p class="text-center text-slate-500 text-sm sm:text-base mt-2">
+      Faster to deploy. Simpler to run. The benefits of enterprise SASE without the cloud backhaul tax or the vendor lock-in.
+    </p>
+  </div>
+</section>
+
+<!-- THE PROBLEM -->
+<section class="px-6 py-24">
+  <div class="max-w-5xl mx-auto">
+    <h2 class="text-3xl sm:text-4xl font-semibold text-center text-slate-900 mb-4">The Modern Edge Stack Is Fragmented</h2>
+    <p class="text-center text-slate-600 max-w-2xl mx-auto mb-14">Most teams cobble together a firewall, a VPN, a web filter, and a cloud dashboard from four different vendors. SASE was supposed to fix that, but cloud-only SASE just trades one set of problems for another.</p>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="p-6 rounded-xl bg-slate-50 flex flex-col">
+        <h3 class="font-semibold text-slate-900 mb-2">Backhaul Latency</h3>
+        <p class="text-slate-600 text-sm">Cloud-only SASE users report throughput slashed from 500&nbsp;Mbps to 30&nbsp;Mbps and round-trip latency jumping from a stable 5&nbsp;ms to 11–280&nbsp;ms when every packet is hair-pinned through a vendor PoP.</p>
+        <div class="mt-auto pt-4 text-xl font-extrabold text-orange-500">up to 80%</div>
+      </div>
+      <div class="p-6 rounded-xl bg-slate-50 flex flex-col">
+        <h3 class="font-semibold text-slate-900 mb-2">Implementation Lag</h3>
+        <p class="text-slate-600 text-sm">Policy changes that should be instant take 15–45 minutes to commit in cloud SASE platforms. Add fragmented portals between firewall, VPN, SWG, and ZTNA, and "from design to operations" stretches from minutes into days.</p>
+        <div class="mt-auto pt-4 text-xl font-extrabold text-orange-500">15–45 min</div>
+      </div>
+      <div class="p-6 rounded-xl bg-slate-50 flex flex-col">
+        <h3 class="font-semibold text-slate-900 mb-2">Vendor Lock-In</h3>
+        <p class="text-slate-600 text-sm">Once your edge lives in someone else's cloud, leaving means re-platforming everything at once.</p>
+      </div>
+      <div class="p-6 rounded-xl bg-slate-50 flex flex-col">
+        <h3 class="font-semibold text-slate-900 mb-2">Data Sovereignty</h3>
+        <p class="text-slate-600 text-sm">Sensitive traffic processed in a foreign jurisdiction creates compliance and privacy headaches.</p>
+      </div>
+      <div class="p-6 rounded-xl bg-slate-50 flex flex-col">
+        <h3 class="font-semibold text-slate-900 mb-2">Renewal Tax</h3>
+        <p class="text-slate-600 text-sm">Per-user pricing as high as $130/user, with cloud SASE customers reporting ~20% renewal hikes year over year. Costs compound while platform value flatlines.</p>
+        <div class="mt-auto pt-4 text-xl font-extrabold text-orange-500">+20% / yr</div>
+      </div>
+      <div class="p-6 rounded-xl bg-slate-50 flex flex-col">
+        <h3 class="font-semibold text-slate-900 mb-2">Inspection Blind Spots</h3>
+        <p class="text-slate-600 text-sm">ZTNA without inline inspection just authenticates the door, it doesn't watch what walks through.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THE SOLUTION -->
+<section class="px-6 py-24 bg-navy-900 text-white">
+  <div class="max-w-4xl mx-auto text-center">
+    <h2 class="text-3xl sm:text-4xl font-semibold mb-4">Meet Zenarmor SASE</h2>
+    <p class="text-lg text-navy-100 mb-12 max-w-2xl mx-auto">A complete Secure Access Service Edge platform with NGFW, ZTNA, SWG, and analytics running on the OPNsense nodes you already trust, managed from a single cloud console.</p>
+    <div class="grid sm:grid-cols-3 gap-4 mb-12 text-sm text-left">
+      <div class="bg-white/10 rounded-lg p-5">
+        <div class="font-bold text-white mb-1">No cloud backhaul</div>
+        <p class="text-navy-100 text-xs leading-relaxed">Traffic inspected at your edge means single-digit-ms local latency, not the 11–280&nbsp;ms hair-pin tax of cloud SASE PoPs.</p>
+      </div>
+      <div class="bg-white/10 rounded-lg p-5">
+        <div class="font-bold text-white mb-1">No new appliances</div>
+        <p class="text-navy-100 text-xs leading-relaxed">Runs on the hardware you already own. Zero forklift refresh.</p>
+      </div>
+      <div class="bg-white/10 rounded-lg p-5">
+        <div class="font-bold text-white mb-1">No tool sprawl</div>
+        <p class="text-navy-100 text-xs leading-relaxed">NGFW, ZTNA, SWG, and analytics in one console. One policy plane. One vendor relationship.</p>
+      </div>
+    </div>
+    <!-- DEPLOY ANYWHERE -->
+    <p class="text-navy-100 text-sm sm:text-base mb-10 leading-relaxed">
+      <span class="font-semibold text-white">Deploy security where you need it.</span> Zenarmor SASE runs directly on OPNsense gateways, branch firewalls, cloud gateways (AWS, Azure, GCP), endpoints and roaming users, and containerized environments.
+    </p>
+
+    <div class="aspect-video bg-black/30 rounded-xl border border-white/10 flex items-center justify-center text-navy-100">
+      <span>▶ See Zenarmor SASE in action, 2 min</span>
+    </div>
+  </div>
+</section>
+
+<!-- CORE FEATURES -->
+<section class="px-6 py-24">
+  <div class="max-w-5xl mx-auto">
+    <h2 class="text-3xl sm:text-4xl font-semibold text-center text-slate-900 mb-14">Four Pillars of a Real SASE Edge</h2>
+    <div class="grid md:grid-cols-2 gap-8">
+      <div class="p-8 rounded-2xl border border-slate-200">
+        <div class="w-10 h-10 rounded-lg bg-orange-50 text-orange-500 flex items-center justify-center font-bold mb-4">1</div>
+        <h3 class="font-semibold text-slate-900 text-lg mb-2">Next-Gen Firewall</h3>
+        <p class="text-slate-600">Layer 7 application control, deep packet inspection, and cloud threat intelligence enforced at every OPNsense site.</p>
+      </div>
+      <div class="p-8 rounded-2xl border border-slate-200">
+        <div class="w-10 h-10 rounded-lg bg-orange-50 text-orange-500 flex items-center justify-center font-bold mb-4">2</div>
+        <h3 class="font-semibold text-slate-900 text-lg mb-2">Zero Trust Network Access</h3>
+        <p class="text-slate-600">Direct, encrypted, identity-based tunnels for remote users and contractors. No VPN concentrator. No broad network exposure.</p>
+      </div>
+      <div class="p-8 rounded-2xl border border-slate-200">
+        <div class="w-10 h-10 rounded-lg bg-orange-50 text-orange-500 flex items-center justify-center font-bold mb-4">3</div>
+        <h3 class="font-semibold text-slate-900 text-lg mb-2">Secure Web Gateway</h3>
+        <p class="text-slate-600">URL category filtering, SafeSearch, TLS inspection, and content controls for every user, every site, every device.</p>
+      </div>
+      <div class="p-8 rounded-2xl border border-slate-200">
+        <div class="w-10 h-10 rounded-lg bg-orange-50 text-orange-500 flex items-center justify-center font-bold mb-4">4</div>
+        <h3 class="font-semibold text-slate-900 text-lg mb-2">Cloud-Native Management</h3>
+        <p class="text-slate-600">One Zenconsole for policy, analytics, reporting, and orchestration across every OPNsense node, whether you have five sites or five hundred.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MANAGEMENT & VISIBILITY -->
+<section class="px-6 py-24 bg-slate-50">
+  <div class="max-w-4xl mx-auto text-center">
+    <h2 class="text-3xl sm:text-4xl font-semibold text-slate-900 mb-4">One Platform. One Console. Every Site.</h2>
+    <p class="text-lg text-slate-600 max-w-2xl mx-auto mb-10">Zenconsole unifies firewall policy, remote-access rules, web filtering, and analytics across every OPNsense node. Push changes globally. Drill into a single user's session. Export audit reports in one click.</p>
+    <div class="grid sm:grid-cols-3 gap-4 text-left">
+      <div class="bg-white rounded-xl p-6 border border-slate-200">
+        <div class="font-semibold text-slate-900 mb-1">Unified Policy</div>
+        <p class="text-sm text-slate-600">One ruleset for firewall, ZTNA, and SWG. No more cross-tool reconciliation.</p>
+      </div>
+      <div class="bg-white rounded-xl p-6 border border-slate-200">
+        <div class="font-semibold text-slate-900 mb-1">Full Session Visibility</div>
+        <p class="text-sm text-slate-600">Live drill-down on every user, every app, every site.</p>
+      </div>
+      <div class="bg-white rounded-xl p-6 border border-slate-200">
+        <div class="font-semibold text-slate-900 mb-1">Scales With You</div>
+        <p class="text-sm text-slate-600">From a single site lab to thousands of remote users without changing architecture.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPETITIVE -->
+<section class="px-6 py-24">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-3xl sm:text-4xl font-semibold text-center text-slate-900 mb-14">Why Customers Pick Zenarmor SASE Over Zscaler, Cato, or Netskope</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="rounded-2xl border border-slate-200 p-7">
+        <h3 class="font-semibold text-slate-900 mb-3">Cloud-Only SASE</h3>
+        <p class="text-sm text-slate-500 mb-4">Zscaler, Netskope</p>
+        <ul class="space-y-2 text-sm text-slate-600">
+          <li class="xmark">Routes all traffic through vendor PoPs</li>
+          <li class="xmark">Latency added to every session</li>
+          <li class="xmark">Hard dependency on vendor cloud</li>
+          <li class="xmark">Strands your existing firewall investment</li>
+        </ul>
+      </div>
+      <div class="rounded-2xl border border-slate-200 p-7">
+        <h3 class="font-semibold text-slate-900 mb-3">Single-Vendor Hybrid</h3>
+        <p class="text-sm text-slate-500 mb-4">Cato, Fortinet SASE</p>
+        <ul class="space-y-2 text-sm text-slate-600">
+          <li class="xmark">Proprietary appliances required</li>
+          <li class="xmark">Multi-year contracts, per-seat pricing</li>
+          <li class="xmark">No interop with OPNsense</li>
+          <li class="xmark">Vendor controls your data path</li>
+        </ul>
+      </div>
+      <div class="rounded-2xl border-2 border-navy-900 p-7 bg-orange-50">
+        <h3 class="font-semibold text-navy-900 mb-3">Zenarmor SASE</h3>
+        <p class="text-sm text-navy-900 mb-4">On the OPNsense you already run</p>
+        <ul class="space-y-2 text-sm text-slate-700">
+          <li class="check">Edge inspection, no backhaul</li>
+          <li class="check">NGFW + ZTNA + SWG unified</li>
+          <li class="check">Cloud-managed, edge-enforced</li>
+          <li class="check">You own the hardware & data path</li>
+          <li class="check">Scales from one site to thousands</li>
+          <li class="check">Commercial support available</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL PROOF -->
+<section class="px-6 py-20 bg-slate-50">
+  <div class="max-w-4xl mx-auto text-center">
+    <blockquote class="text-xl sm:text-2xl text-slate-700 italic mb-6">"We evaluated Zscaler but realized Zenarmor gave us the same outcome with far less complexity. Setup took an afternoon."</blockquote>
+    <p class="text-slate-500">Bugra Gumus, CEO, MSP, Los Angeles</p>
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-12 max-w-3xl mx-auto">
+      <a href="https://www.zenarmor.com/announcements#zenarmor-wins-tmcnet-zero-trust-security-excellence-award" target="_blank" rel="noopener" class="bg-navy-900 rounded-lg py-6 px-4 border border-navy-800 flex items-center justify-center hover:shadow-lg hover:border-orange-500/60 transition">
+        <img src="../tmc-ribbon-logo.webp" alt="TMCnet Zero Trust Security Excellence Award" class="h-14 w-auto object-contain" />
+      </a>
+      <a href="https://www.zenarmor.com/announcements#EMA-names-Zenarmor-a-Vendor-to-Watch" target="_blank" rel="noopener" class="bg-navy-900 rounded-lg py-6 px-4 border border-navy-800 flex items-center justify-center hover:shadow-lg hover:border-orange-500/60 transition">
+        <img src="../ema-ribbon-logo.webp" alt="EMA Vendor to Watch" class="h-14 w-auto object-contain" />
+      </a>
+      <a href="https://www.zenarmor.com/announcements#zenarmor-named-finalist-2026-sc-awards-best-sase-solution" target="_blank" rel="noopener" class="bg-navy-900 rounded-lg py-6 px-4 border border-navy-800 flex items-center justify-center hover:shadow-lg hover:border-orange-500/60 transition">
+        <img src="../sc-ribbon-logo.webp" alt="2026 SC Awards Best SASE Solution Finalist" class="h-14 w-auto object-contain" />
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="px-6 py-24">
+  <div class="max-w-3xl mx-auto">
+    <h2 class="text-3xl sm:text-4xl font-semibold text-center text-slate-900 mb-12">Frequently Asked Questions</h2>
+    <div class="divide-y divide-slate-200">
+      <details class="py-5 group"><summary class="flex justify-between cursor-pointer font-medium text-slate-900">Do I need to replace my OPNsense firewall?<span class="text-orange-500 group-open:rotate-45 transition">+</span></summary><p class="text-slate-600 mt-3">No. Zenarmor SASE installs as an OPNsense plugin and uses the firewall you already operate as the SASE enforcement point.</p></details>
+      <details class="py-5 group"><summary class="flex justify-between cursor-pointer font-medium text-slate-900">How is this different from cloud-only SASE like Zscaler?<span class="text-orange-500 group-open:rotate-45 transition">+</span></summary><p class="text-slate-600 mt-3">Cloud SASE routes all traffic through vendor PoPs. Zenarmor SASE keeps inspection at your edge, direct-to-SaaS performance with no backhaul tax, while still giving you cloud-based management.</p></details>
+      <details class="py-5 group"><summary class="flex justify-between cursor-pointer font-medium text-slate-900">How does pricing work?<span class="text-orange-500 group-open:rotate-45 transition">+</span></summary><p class="text-slate-600 mt-3">Pricing is per site and per user with no per-module nickel-and-diming. A free tier is available for evaluation and small deployments.</p></details>
+      <details class="py-5 group"><summary class="flex justify-between cursor-pointer font-medium text-slate-900">Can I cover remote workers and contractors?<span class="text-orange-500 group-open:rotate-45 transition">+</span></summary><p class="text-slate-600 mt-3">Yes. The ZTNA module gives remote users direct, identity-based encrypted tunnels into authorized applications, no VPN concentrator required.</p></details>
+      <details class="py-5 group"><summary class="flex justify-between cursor-pointer font-medium text-slate-900">What about IoT, printers, and devices without an agent?<span class="text-orange-500 group-open:rotate-45 transition">+</span></summary><p class="text-slate-600 mt-3">Agentless devices are protected at the OPNsense gateway with full L7 inspection, threat intel, and microsegmentation. All with the same policy plane as agented users.</p></details>
+      <details class="py-5 group"><summary class="flex justify-between cursor-pointer font-medium text-slate-900">Where is my data processed?<span class="text-orange-500 group-open:rotate-45 transition">+</span></summary><p class="text-slate-600 mt-3">Traffic inspection happens locally at your OPNsense edge. Only metadata for reporting and policy sync flows to Zenconsole, and EU/regional data residency is supported.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER CTA -->
+<section id="demo" class="px-6 py-24 bg-orange-500 text-white text-center">
+  <div class="max-w-2xl mx-auto">
+    <h2 class="text-3xl sm:text-4xl font-semibold mb-4">Bring your OPNsense into the SASE era</h2>
+    <p class="text-orange-50 mb-8">Setup takes minutes. Most teams go live the same day.</p>
+    <a href="#" class="inline-flex items-center px-8 py-3.5 rounded-xl bg-white text-navy-900 font-semibold hover:bg-orange-50 transition">Request a Demo</a>
+  </div>
+</section>
+
+<footer class="px-6 py-10 text-center text-sm text-slate-500">
+  © Zenarmor · Built for OPNsense
+</footer>
 
 </body>
 </html>
