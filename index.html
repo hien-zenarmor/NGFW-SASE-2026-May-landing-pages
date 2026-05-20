@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Zenarmor Project Review</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: { sans: ['Inter','ui-sans-serif','system-ui','sans-serif'] },
+        colors: {
+          navy:   { 50:'#eef0fb', 100:'#d4d9f3', 500:'#2a31a0', 700:'#151b75', 800:'#0d1259', 900:'#0a0f4f' },
+          orange: { 50:'#fff4e5', 100:'#ffe1bf', 500:'#ff8b00', 600:'#e67a00', 700:'#b35f00' }
+        }
+      }
+    }
+  }
+</script>
+<style>
+  body { font-family: 'Inter', sans-serif; background: radial-gradient(circle at top, #f8fafc 0%, #f1f5f9 100%); min-height: 100vh; }
+</style>
+</head>
+<body class="flex items-center justify-center p-6 antialiased">
+
+<div class="max-w-4xl w-full text-center">
+  <!-- LOGO -->
+  <div class="mb-12 flex justify-center">
+    <img src="zenarmor-logo-type-basic.png" alt="Zenarmor" class="h-10 w-auto" />
+  </div>
+
+  <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">Project Review</h1>
+  <p class="text-slate-600 mb-12">Select a version below to review the latest design updates.</p>
+
+  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <!-- NGFW CARD -->
+    <a href="ngfw/index.html" class="group bg-white p-8 rounded-2xl border border-slate-200 shadow-sm hover:shadow-xl hover:border-orange-500/50 transition-all duration-300 text-left">
+      <div class="w-12 h-12 rounded-xl bg-orange-50 text-orange-500 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+        </svg>
+      </div>
+      <h3 class="text-xl font-bold text-slate-900 mb-2">NGFW</h3>
+      <p class="text-sm text-slate-500 leading-relaxed">Enterprise-grade next-gen firewall power for your OPNsense nodes.</p>
+      <div class="mt-6 flex items-center text-orange-500 font-semibold text-sm">
+        Review Page
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
+      </div>
+    </a>
+
+    <!-- SASE CARD -->
+    <a href="sase/index.html" class="group bg-white p-8 rounded-2xl border border-slate-200 shadow-sm hover:shadow-xl hover:border-navy-500/50 transition-all duration-300 text-left">
+      <div class="w-12 h-12 rounded-xl bg-navy-50 text-navy-500 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+        </svg>
+      </div>
+      <h3 class="text-xl font-bold text-slate-900 mb-2">SASE</h3>
+      <p class="text-sm text-slate-500 leading-relaxed">Build a full SASE edge on the firewalls you already operate.</p>
+      <div class="mt-6 flex items-center text-navy-500 font-semibold text-sm">
+        Review Page
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
+      </div>
+    </a>
+
+    <!-- SASE NEW MESSAGING CARD -->
+    <a href="sase-new-messaging/index.html" class="group bg-white p-8 rounded-2xl border border-slate-200 shadow-sm hover:shadow-xl hover:border-emerald-500/50 transition-all duration-300 text-left">
+      <div class="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-500 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h6m-6 4h10M5 21h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v14a2 2 0 002 2z" />
+        </svg>
+      </div>
+      <h3 class="text-xl font-bold text-slate-900 mb-2">SASE (New Messaging)</h3>
+      <p class="text-sm text-slate-500 leading-relaxed">MSSP-focused messaging that ties each product claim to a concrete business outcome.</p>
+      <div class="mt-6 flex items-center text-emerald-500 font-semibold text-sm">
+        Review Page
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
+      </div>
+    </a>
+  </div>
+
+  <footer class="mt-16 text-slate-400 text-xs uppercase tracking-widest font-semibold">
+    Internal Review Only
+  </footer>
+</div>
+
+</body>
+</html>
