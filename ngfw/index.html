@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Zenarmor NGFW — Enterprise-Grade Next-Gen Firewall</title>
+<meta name="description" content="Add Layer 7 application control, deep packet inspection, cloud threat intelligence, and centralized reporting to OPNsense, pfSense, or your own hardware." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: { sans: ['Inter','ui-sans-serif','system-ui','sans-serif'] },
+        colors: {
+          navy:   { 50:'#eef0fb', 100:'#d4d9f3', 500:'#2a31a0', 700:'#151b75', 800:'#0d1259', 900:'#0a0f4f' },
+          orange: { 50:'#fff4e5', 100:'#ffe1bf', 500:'#ff8b00', 600:'#e67a00', 700:'#b35f00' }
+        }
+      }
+    }
+  }
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', ui-sans-serif, system-ui, sans-serif; letter-spacing: -0.01em; }
+  h1, h2, h3 { letter-spacing: -0.025em; }
+  .check::before { content: "✓"; color: #ff8b00; font-weight: 700; margin-right: .5rem; }
+  .xmark::before { content: "✕"; color: #94a3b8; font-weight: 700; margin-right: .5rem; }
+  .warn::before  { content: "△"; color: #d97706; font-weight: 700; margin-right: .5rem; }
+</style>
+</head>
+<body class="bg-white text-slate-800 antialiased">
+
+<!-- NAV -->
+<header class="border-b border-slate-100">
+  <div class="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <img src="logo.png" alt="Zenarmor" class="h-7 w-auto" />
+      <span class="text-slate-300 hidden sm:inline">|</span>
+      <span class="hidden sm:inline font-semibold text-navy-900 tracking-tight">NGFW for OPNsense</span>
+    </div>
+    <a href="https://dash.zenarmor.com/firewalls/register/new-user" class="inline-flex items-center px-5 py-2.5 rounded-xl bg-orange-500 text-white font-semibold hover:bg-orange-600 transition shadow-sm">Start Your Free Trial</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="px-6 pt-20 pb-10">
+  <div class="max-w-4xl mx-auto text-center">
+    <h1 class="text-4xl sm:text-6xl font-extrabold text-slate-900 leading-tight mb-6">
+      Enterprise NGFW Power<br />
+      <span class="bg-gradient-to-r from-slate-900 via-[#0057FF] to-[#F2AA55] bg-clip-text text-transparent">for the Firewall<br />You Already Run.</span>
+    </h1>
+    <p class="text-lg sm:text-xl text-slate-600 max-w-2xl mx-auto mb-10">
+      Layer 7 application control, TLS inspection, and real-time cloud-delivered threat intelligence that installs in minutes on OPNsense, turning it into an enterprise security powerhouse.
+    </p>
+    <a href="https://dash.zenarmor.com/firewalls/register/new-user" class="inline-flex items-center px-7 py-3.5 rounded-xl bg-orange-500 text-white font-medium hover:bg-orange-600 transition shadow-sm">Start Your Free Trial</a>
+    <p class="text-sm text-slate-500 mt-5">Free tier available. Most teams are filtering Layer 7 traffic the same day.</p>
+  </div>
+</section>
+
+<!-- COMPARISON -->
+<section class="px-6 pt-12 pb-20 bg-slate-50">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-3xl sm:text-4xl font-semibold text-center text-slate-900 mb-4">Where Zenarmor Fits in the Firewall Landscape</h2>
+    <p class="text-center text-slate-600 max-w-2xl mx-auto mb-14">From traditional commercial appliances, to the open-source firewalls many teams have migrated to, to the modern NGFW layer that brings them up to today's standard.</p>
+    <div class="grid md:grid-cols-3 gap-6">
+
+      <!-- Other Firewalls -->
+      <div class="bg-white rounded-2xl p-8 border border-slate-200">
+        <h3 class="font-semibold text-slate-900 mb-1">Traditional Firewalls</h3>
+        <p class="text-sm text-slate-500 mb-5">Fortinet, Cisco, SonicWall, consumer routers</p>
+        <ul class="space-y-3 text-slate-600 text-sm">
+          <li class="xmark">Closed-source, vendor lock-in</li>
+          <li class="xmark">Forklift hardware refresh cycles</li>
+          <li class="xmark">Per-feature license sprawl</li>
+          <li class="xmark">Limited customization & extensibility</li>
+          <li class="xmark">Expensive multi-site licensing</li>
+          <li class="xmark">Proprietary ecosystem & tooling</li>
+        </ul>
+      </div>
+
+      <!-- OPNsense -->
+      <div class="bg-white rounded-2xl p-8 border border-slate-200">
+        <h3 class="font-semibold text-slate-900 mb-1">OPNsense</h3>
+        <p class="text-sm text-slate-500 mb-5">A modern, open-source firewall</p>
+        <ul class="space-y-3 text-slate-700 text-sm">
+          <li class="check">Open-source and fully transparent</li>
+          <li class="check">Runs on hardware you choose</li>
+          <li class="check">Powerful stateful filtering, routing, VPN, HA</li>
+          <li class="check">Vibrant community & plugin ecosystem</li>
+          <li class="warn">Layer 7 visibility via DIY add-ons</li>
+          <li class="warn">Multi-site management requires custom tooling</li>
+        </ul>
+      </div>
+
+      <!-- OPNsense + Zenarmor -->
+      <div class="bg-white rounded-2xl p-8 border-2 border-navy-900 shadow-md relative">
+        <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Recommended</span>
+        <h3 class="font-semibold text-navy-900 mb-1">OPNsense + Zenarmor</h3>
+        <p class="text-sm text-navy-700 mb-5">The full modern NGFW stack</p>
+        <ul class="space-y-3 text-slate-700 text-sm">
+          <li class="check">Everything OPNsense gives you, plus:</li>
+          <li class="check">Layer 7 app control out of the box</li>
+          <li class="check">Cloud-delivered threat intel with zero tuning</li>
+          <li class="check">120+ URL categories & SafeSearch</li>
+          <li class="check">Centralized multi-site Zenconsole</li>
+          <li class="check">Real-time analytics & scheduled reports</li>
+        </ul>
+      </div>
+
+    </div>
+    <p class="text-center text-sm text-slate-500 mt-6"><span class="text-orange-600 font-bold">✓</span> Full · <span class="text-amber-600 font-bold">△</span> Possible with DIY effort · <span class="text-slate-400 font-bold">✕</span> Not available</p>
+  </div>
+</section>
+
+<!-- THE SOLUTION -->
+<section class="px-6 py-24 bg-navy-900 text-white">
+  <div class="max-w-4xl mx-auto text-center">
+    <h2 class="text-3xl sm:text-4xl font-semibold mb-4">Meet Zenarmor NGFW</h2>
+    <p class="text-lg text-navy-100 mb-12 max-w-2xl mx-auto">Enterprise-grade next-gen firewall capability, deployed in minutes. Choose from an OPNsense plugin, or alongside the firewall you already operate. No new hardware. No rip-and-replace.</p>
+    <div class="grid sm:grid-cols-3 gap-4 mb-12 text-sm">
+      <div class="bg-white/10 rounded-lg py-4 px-3">No new hardware</div>
+      <div class="bg-white/10 rounded-lg py-4 px-3">No traffic backhaul</div>
+      <div class="bg-white/10 rounded-lg py-4 px-3">No vendor lock-in</div>
+    </div>
+    <div class="aspect-video bg-black/30 rounded-xl border border-white/10 flex items-center justify-center text-navy-100">
+      <span>▶ See Zenarmor NGFW in action — 2 min</span>
+    </div>
+  </div>
+</section>
+
+<!-- CORE FEATURES -->
+<section class="px-6 py-24">
+  <div class="max-w-5xl mx-auto">
+    <h2 class="text-3xl sm:text-4xl font-semibold text-center text-slate-900 mb-14">Four Capabilities You Gain On Day One</h2>
+    <div class="grid md:grid-cols-2 gap-8">
+      <div class="p-8 rounded-2xl border border-slate-200 flex flex-col">
+        <div class="w-10 h-10 rounded-lg bg-orange-50 text-orange-500 flex items-center justify-center font-bold mb-4">1</div>
+        <h3 class="font-semibold text-slate-900 text-lg mb-2">TLS Inspection<a href="#tls-footnote" class="text-orange-500 no-underline ml-0.5 align-super text-xs">*</a></h3>
+        <p class="text-slate-600 mb-6">Deep packet inspection that sees inside encrypted traffic. Identify and control thousands of applications and protocols, even when they ride on port 443. Certificate-based or full TLS inspection catches malware and evasive threats other firewalls miss.</p>
+        <img src="images/tls-inspection.png" alt="TLS Inspection" class="zoomable w-full h-44 object-contain rounded-lg bg-slate-50 p-3 mt-auto cursor-zoom-in transition hover:opacity-90" />
+      </div>
+      <div class="p-8 rounded-2xl border border-slate-200 flex flex-col">
+        <div class="w-10 h-10 rounded-lg bg-orange-50 text-orange-500 flex items-center justify-center font-bold mb-4">2</div>
+        <h3 class="font-semibold text-slate-900 text-lg mb-2">Application & User Control</h3>
+        <p class="text-slate-600 mb-6">Allow Microsoft 365 but block consumer Dropbox. Throttle streaming on guest VLANs. Per-user, per-group, per-app policy.</p>
+        <img src="images/app-control.png" alt="Application and User Control" class="zoomable w-full h-44 object-contain rounded-lg bg-slate-50 p-3 mt-auto cursor-zoom-in transition hover:opacity-90" />
+      </div>
+      <div class="p-8 rounded-2xl border border-slate-200 flex flex-col">
+        <div class="w-10 h-10 rounded-lg bg-orange-50 text-orange-500 flex items-center justify-center font-bold mb-4">3</div>
+        <h3 class="font-semibold text-slate-900 text-lg mb-2">Cloud Threat Intelligence</h3>
+        <p class="text-slate-600 mb-6">Live feeds for malicious IPs, domains, phishing, C2, and crypto-jackers. Everything is updated continuously, no manual rules.</p>
+        <img src="images/threat-intel.webp" alt="Cloud Threat Intelligence" class="zoomable w-full h-44 object-contain rounded-lg bg-slate-50 p-3 mt-auto cursor-zoom-in transition hover:opacity-90" />
+      </div>
+      <div class="p-8 rounded-2xl border border-slate-200 flex flex-col">
+        <div class="w-10 h-10 rounded-lg bg-orange-50 text-orange-500 flex items-center justify-center font-bold mb-4">4</div>
+        <h3 class="font-semibold text-slate-900 text-lg mb-2">Web & Content Filtering</h3>
+        <p class="text-slate-600 mb-6">120+ URL categories, SafeSearch enforcement, and policy-based filtering across 300M+ sites. A perfect fit for K-12, healthcare, MSP, and enterprise alike.</p>
+        <img src="images/web-filtering.png" alt="Web and Content Filtering" class="zoomable w-full h-44 object-contain rounded-lg bg-slate-50 p-3 mt-auto cursor-zoom-in transition hover:opacity-90" />
+      </div>
+    </div>
+    <p id="tls-footnote" class="text-sm text-slate-500 mt-8"><span class="text-orange-500 font-bold">*</span> Basic TLS Inspection is included. Full TLS Inspection requires an SSE license.</p>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div id="lightbox" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 backdrop-blur-sm cursor-zoom-out p-6" role="dialog" aria-modal="true" aria-label="Image preview">
+  <button id="lightbox-close" class="absolute top-5 right-6 text-white/80 hover:text-white text-3xl leading-none" aria-label="Close">&times;</button>
+  <img id="lightbox-img" src="" alt="" class="max-w-[95vw] max-h-[90vh] object-contain rounded-lg shadow-2xl" />
+</div>
+
+<script>
+(function () {
+  const lb = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lightbox-img');
+  const lbClose = document.getElementById('lightbox-close');
+  if (!lb || !lbImg) return;
+
+  function open(src, alt) {
+    lbImg.src = src;
+    lbImg.alt = alt || '';
+    lb.classList.remove('hidden');
+    lb.classList.add('flex');
+    document.body.style.overflow = 'hidden';
+  }
+  function close() {
+    lb.classList.add('hidden');
+    lb.classList.remove('flex');
+    lbImg.src = '';
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('img.zoomable').forEach(img => {
+    img.addEventListener('click', () => open(img.src, img.alt));
+  });
+  lb.addEventListener('click', e => { if (e.target === lb) close(); });
+  lbClose.addEventListener('click', close);
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
+})();
+</script>
+
+<!-- MANAGEMENT & VISIBILITY -->
+<section class="px-6 py-24 bg-slate-50">
+  <div class="max-w-4xl mx-auto text-center">
+    <h2 class="text-3xl sm:text-4xl font-semibold text-slate-900 mb-4">Simple Management. Complete Visibility.</h2>
+    <p class="text-lg text-slate-600 max-w-2xl mx-auto mb-10">One site or fifty branches? Easily manage policy, view live traffic, and run forensics from a single Zenconsole. Real-time dashboards. Per-user reports. Exportable for audit and compliance.</p>
+    <div class="grid sm:grid-cols-3 gap-4 text-left">
+      <div class="bg-white rounded-xl p-6 border border-slate-200">
+        <div class="font-semibold text-slate-900 mb-1">Centralized Policy</div>
+        <p class="text-sm text-slate-600">Push consistent rules to every node, OPNsense or otherwise, from one console.</p>
+      </div>
+      <div class="bg-white rounded-xl p-6 border border-slate-200">
+        <div class="font-semibold text-slate-900 mb-1">Live Analytics</div>
+        <p class="text-sm text-slate-600">See top apps, users, threats, and bandwidth in real time.</p>
+      </div>
+      <div class="bg-white rounded-xl p-6 border border-slate-200">
+        <div class="font-semibold text-slate-900 mb-1">Scheduled Reports</div>
+        <p class="text-sm text-slate-600">PDF and CSV exports for compliance, ops review, and customer billing.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL PROOF -->
+<section class="px-6 py-20 bg-slate-50">
+  <div class="max-w-4xl mx-auto text-center">
+    <blockquote class="text-xl sm:text-2xl text-slate-700 italic mb-6">&lt;PLACEHOLDER&gt; "We were already running OPNsense at every branch. Adding Zenarmor gave us the visibility and policy control we used to pay Fortinet for — without replacing a single box." &lt;/PLACEHOLDER&gt;</blockquote>
+    <p class="text-slate-500">— &lt;PLACEHOLDER&gt; Network Architect, Regional MSP &lt;/PLACEHOLDER&gt;</p>
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-12 max-w-3xl mx-auto">
+      <a href="https://www.zenarmor.com/announcements#zenarmor-wins-tmcnet-zero-trust-security-excellence-award" target="_blank" rel="noopener" class="bg-navy-900 rounded-lg py-6 px-4 border border-navy-800 flex items-center justify-center hover:shadow-lg hover:border-orange-500/60 transition">
+        <img src="../tmc-ribbon-logo.webp" alt="TMCnet Zero Trust Security Excellence Award" class="h-14 w-auto object-contain" />
+      </a>
+      <a href="https://www.zenarmor.com/announcements#EMA-names-Zenarmor-a-Vendor-to-Watch" target="_blank" rel="noopener" class="bg-navy-900 rounded-lg py-6 px-4 border border-navy-800 flex items-center justify-center hover:shadow-lg hover:border-orange-500/60 transition">
+        <img src="../ema-ribbon-logo.webp" alt="EMA Vendor to Watch" class="h-14 w-auto object-contain" />
+      </a>
+      <a href="https://www.zenarmor.com/announcements#zenarmor-named-finalist-2026-sc-awards-best-sase-solution" target="_blank" rel="noopener" class="bg-navy-900 rounded-lg py-6 px-4 border border-navy-800 flex items-center justify-center hover:shadow-lg hover:border-orange-500/60 transition">
+        <img src="../sc-ribbon-logo.webp" alt="2026 SC Awards Best SASE Solution Finalist" class="h-14 w-auto object-contain" />
+      </a>
+    </div>
+
+    <!-- OPNSENSE TESTIMONIAL CAROUSEL -->
+    <!-- TODO: Replace placeholder quotes/attributions with real OPNsense community testimonials when available -->
+    <div class="mt-16 pt-12 border-t border-slate-200">
+      <p class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-8">What OPNsense teams are saying</p>
+      <div class="relative" x-data="{ active: 0, total: 3 }">
+        <div class="overflow-hidden">
+          <div class="flex transition-transform duration-500 ease-out" id="opnsense-track" style="transform: translateX(0%);">
+
+            <!-- PLACEHOLDER QUOTE 1 -->
+            <div class="w-full flex-shrink-0 px-4">
+              <blockquote class="text-lg sm:text-xl text-slate-700 italic mb-5 max-w-3xl mx-auto">&lt;PLACEHOLDER&gt; "Zenarmor gave our OPNsense boxes the Layer 7 visibility we'd been missing. We finally see what every device on the network is actually doing." &lt;/PLACEHOLDER&gt;</blockquote>
+              <p class="text-slate-500 text-sm">&lt;PLACEHOLDER&gt; Senior Network Engineer, Mid-Market Manufacturing &lt;/PLACEHOLDER&gt;</p>
+            </div>
+
+            <!-- PLACEHOLDER QUOTE 2 -->
+            <div class="w-full flex-shrink-0 px-4">
+              <blockquote class="text-lg sm:text-xl text-slate-700 italic mb-5 max-w-3xl mx-auto">&lt;PLACEHOLDER&gt; "We swapped out a five-figure Fortinet renewal for OPNsense + Zenarmor. Same controls, real-time threat intel, and we kept the hardware we already owned." &lt;/PLACEHOLDER&gt;</blockquote>
+              <p class="text-slate-500 text-sm">&lt;PLACEHOLDER&gt; IT Director, Regional Healthcare Provider &lt;/PLACEHOLDER&gt;</p>
+            </div>
+
+            <!-- PLACEHOLDER QUOTE 3 -->
+            <div class="w-full flex-shrink-0 px-4">
+              <blockquote class="text-lg sm:text-xl text-slate-700 italic mb-5 max-w-3xl mx-auto">&lt;PLACEHOLDER&gt; "Install was a single command. By the end of the afternoon we were filtering, reporting, and pushing policy to every branch from one console." &lt;/PLACEHOLDER&gt;</blockquote>
+              <p class="text-slate-500 text-sm">&lt;PLACEHOLDER&gt; MSP Owner, Pacific Northwest &lt;/PLACEHOLDER&gt;</p>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Dots -->
+        <div class="flex justify-center gap-2 mt-8" id="opnsense-dots">
+          <button data-slide="0" class="w-2.5 h-2.5 rounded-full bg-orange-500 transition" aria-label="Slide 1"></button>
+          <button data-slide="1" class="w-2.5 h-2.5 rounded-full bg-slate-300 hover:bg-slate-400 transition" aria-label="Slide 2"></button>
+          <button data-slide="2" class="w-2.5 h-2.5 rounded-full bg-slate-300 hover:bg-slate-400 transition" aria-label="Slide 3"></button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+(function () {
+  const track = document.getElementById('opnsense-track');
+  const dots = document.querySelectorAll('#opnsense-dots button');
+  if (!track || !dots.length) return;
+  let active = 0;
+  const total = dots.length;
+
+  function go(i) {
+    active = (i + total) % total;
+    track.style.transform = 'translateX(' + (-100 * active) + '%)';
+    dots.forEach((d, idx) => {
+      d.classList.toggle('bg-orange-500', idx === active);
+      d.classList.toggle('bg-slate-300', idx !== active);
+      d.classList.toggle('hover:bg-slate-400', idx !== active);
+    });
+  }
+
+  dots.forEach((d, idx) => d.addEventListener('click', () => go(idx)));
+  setInterval(() => go(active + 1), 7000);
+})();
+</script>
+
+<!-- FAQ -->
+<section class="px-6 py-24">
+  <div class="max-w-3xl mx-auto">
+    <h2 class="text-3xl sm:text-4xl font-semibold text-center text-slate-900 mb-12">Frequently Asked Questions</h2>
+    <div class="divide-y divide-slate-200">
+      <details class="py-5 group"><summary class="flex justify-between cursor-pointer font-medium text-slate-900">Is there a free tier?<span class="text-orange-500 group-open:rotate-45 transition">+</span></summary><p class="text-slate-600 mt-3">Yes. Zenarmor Free Edition is available at no cost for home labs and small networks, with core app control and basic filtering included.</p></details>
+      <details class="py-5 group"><summary class="flex justify-between cursor-pointer font-medium text-slate-900">Will it slow down my existing firewall?<span class="text-orange-500 group-open:rotate-45 transition">+</span></summary><p class="text-slate-600 mt-3">Zenarmor is engineered for line-rate inspection on modest hardware. Sizing guidance is published for everything from a Protectli to multi-Gbps appliances.</p></details>
+      <details class="py-5 group"><summary class="flex justify-between cursor-pointer font-medium text-slate-900">What platforms is Zenarmor supported on?<span class="text-orange-500 group-open:rotate-45 transition">+</span></summary><p class="text-slate-600 mt-3">Zenarmor installs as a one-command plugin on current OPNsense stable releases, and is also supported on a range of other deployment targets including bare-metal Linux, virtual machines, and cloud workloads.</p></details>
+      <details class="py-5 group"><summary class="flex justify-between cursor-pointer font-medium text-slate-900">Does it replace tools like Suricata, Squid, or pfBlockerNG?<span class="text-orange-500 group-open:rotate-45 transition">+</span></summary><p class="text-slate-600 mt-3">Zenarmor supersedes most DIY stacks with a single integrated engine: L7 app control, threat intel, content filtering, and reporting, all managed from one UI.</p></details>
+      <details class="py-5 group"><summary class="flex justify-between cursor-pointer font-medium text-slate-900">Can I manage multiple sites centrally?<span class="text-orange-500 group-open:rotate-45 transition">+</span></summary><p class="text-slate-600 mt-3">Yes. Zenconsole lets you push policy, view analytics, and run reports across every connected node from one place, whether you have one site or fifty.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER CTA -->
+<section id="demo" class="px-6 py-24 bg-orange-500 text-white text-center">
+  <div class="max-w-2xl mx-auto">
+    <h2 class="text-3xl sm:text-4xl font-semibold mb-4">Supercharge your firewall today</h2>
+    <p class="text-orange-50 mb-8">Install takes minutes on OPNsense or your platform of choice. Free tier available.</p>
+    <a href="https://dash.zenarmor.com/firewalls/register/new-user" class="inline-flex items-center px-8 py-3.5 rounded-xl bg-white text-navy-900 font-semibold hover:bg-orange-50 transition">Start Your Free Trial</a>
+  </div>
+</section>
+
+<footer class="px-6 py-10 text-center text-sm text-slate-500">
+  © Zenarmor
+</footer>
+
+</body>
+</html>
