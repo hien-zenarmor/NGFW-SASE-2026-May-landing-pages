@@ -273,6 +273,7 @@
   <div class="max-w-4xl mx-auto text-center">
     <blockquote class="text-xl sm:text-2xl text-slate-700 italic mb-6">"We evaluated Zscaler but realized Zenarmor gave us the same outcome with far less complexity. Setup took an afternoon."</blockquote>
     <p class="text-slate-500">Bugra Gumus, CEO, MSP, Los Angeles</p>
+
     <p class="text-xs font-bold uppercase tracking-widest text-slate-400 mt-12 mb-6">Recognized By</p>
     <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-4xl mx-auto">
       <a href="https://www.zenarmor.com/announcements#zenarmor-wins-tmcnet-zero-trust-security-excellence-award" target="_blank" rel="noopener" class="bg-navy-900 rounded-lg py-6 px-4 border border-navy-800 flex flex-col items-center justify-start gap-4 hover:shadow-lg hover:border-orange-500/60 transition">
@@ -292,6 +293,40 @@
         <span class="text-xs text-white font-semibold text-center leading-snug">Network Computing Awards 2026 Finalist</span>
       </div>
     </div>
+
+    <!-- SASE TESTIMONIAL CAROUSEL -->
+    <div class="mt-16 pt-12 border-t border-slate-200">
+      <p class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-8">What customers and analysts are saying</p>
+      <div class="relative">
+        <div class="overflow-hidden">
+          <div class="flex transition-transform duration-500 ease-out" id="sase-track" style="transform: translateX(0%);">
+
+            <div class="w-full flex-shrink-0 px-4">
+              <blockquote class="text-lg sm:text-xl text-slate-700 italic mb-5 max-w-3xl mx-auto">"Zenarmor enables us to move beyond gateway-only models to distributed enforcement with centralized visibility and control."</blockquote>
+              <p class="text-slate-500 text-sm">Mark Weinberger, Client Solutions Director, Spectrum Networks</p>
+            </div>
+
+            <div class="w-full flex-shrink-0 px-4">
+              <blockquote class="text-lg sm:text-xl text-slate-700 italic mb-5 max-w-3xl mx-auto">"By eliminating PoPs and enabling direct, point-to-point secure connections with inline inspection, Zenarmor delivers a next-generation SASE architecture."</blockquote>
+              <p class="text-slate-500 text-sm">Shamus McGillicuddy, VP of Research, Enterprise Management Associates</p>
+            </div>
+
+            <div class="w-full flex-shrink-0 px-4">
+              <blockquote class="text-lg sm:text-xl text-slate-700 italic mb-5 max-w-3xl mx-auto">"Zenarmor SASE gave us exactly what we were looking for: the flexibility, seamless fit into our architecture."</blockquote>
+              <p class="text-slate-500 text-sm">IT Manager, Fred Loya Insurance</p>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="flex justify-center gap-2 mt-8" id="sase-dots">
+          <button data-slide="0" class="w-2.5 h-2.5 rounded-full bg-orange-500 transition" aria-label="Slide 1"></button>
+          <button data-slide="1" class="w-2.5 h-2.5 rounded-full bg-slate-300 hover:bg-slate-400 transition" aria-label="Slide 2"></button>
+          <button data-slide="2" class="w-2.5 h-2.5 rounded-full bg-slate-300 hover:bg-slate-400 transition" aria-label="Slide 3"></button>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -322,6 +357,29 @@
 <footer class="px-6 py-10 text-center text-sm text-slate-500">
   © Zenarmor · Built for OPNsense
 </footer>
+
+<script>
+(function () {
+  const track = document.getElementById('sase-track');
+  const dots = document.querySelectorAll('#sase-dots button');
+  if (!track || !dots.length) return;
+  let active = 0;
+  const total = dots.length;
+
+  function go(i) {
+    active = (i + total) % total;
+    track.style.transform = 'translateX(' + (-100 * active) + '%)';
+    dots.forEach((d, idx) => {
+      d.classList.toggle('bg-orange-500', idx === active);
+      d.classList.toggle('bg-slate-300', idx !== active);
+      d.classList.toggle('hover:bg-slate-400', idx !== active);
+    });
+  }
+
+  dots.forEach((d, idx) => d.addEventListener('click', () => go(idx)));
+  setInterval(() => go(active + 1), 7000);
+})();
+</script>
 
 </body>
 </html>
