@@ -8,20 +8,23 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        fontFamily: { sans: ['Inter','ui-sans-serif','system-ui','sans-serif'] },
-        colors: {
-          navy:   { 50:'#eef0fb', 100:'#d4d9f3', 500:'#2a31a0', 700:'#151b75', 800:'#0d1259', 900:'#0a0f4f' },
-          orange: { 50:'#fff4e5', 100:'#ffe1bf', 500:'#ff8b00', 600:'#e67a00', 700:'#b35f00' }
-        }
-      }
-    }
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<style type="text/tailwindcss">
+  @theme {
+    --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+    --color-navy-50: #eef0fb;
+    --color-navy-100: #d4d9f3;
+    --color-navy-500: #2a31a0;
+    --color-navy-700: #151b75;
+    --color-navy-800: #0d1259;
+    --color-navy-900: #0a0f4f;
+    --color-orange-50: #fff4e5;
+    --color-orange-100: #ffe1bf;
+    --color-orange-500: #ff8b00;
+    --color-orange-600: #e67a00;
+    --color-orange-700: #b35f00;
   }
-</script>
+</style>
 <style>
   html { scroll-behavior: smooth; }
   body { font-family: 'Inter', ui-sans-serif, system-ui, sans-serif; letter-spacing: -0.01em; }
@@ -50,8 +53,8 @@
       <span class="bg-gradient-to-r from-slate-900 via-[#0057FF] to-[#F2AA55] bg-clip-text text-transparent">Stack on OPNsense<br />With Zenarmor.</span>
     </h1>
     <div class="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto mb-10 space-y-4">
-      <p>A radically simple distributed network security platform that deploys anywhere in minutes. Enforce security at the nearest point and manage everything from a single unified system. It includes NGFW, ZTNA, secure web gateway, CASB, DLP, DNS security, and cloud-native management unified into one platform.</p>
-      <p class="font-medium text-slate-700">Unified, simple, and fast enterprise SASE, delivered through the OPNsense nodes you already operate.</p>
+      <p>A radically simple distributed network security platform that deploys anywhere in minutes. Enforce security at the nearest point and manage everything from a single unified system. Zenarmor SASE delivers NGFW, ZTNA, Secure Web Gateway, CASB, DLP, and DNS security through a unified Single-App, Single-Stack architecture, with centralized policy management and visibility provided by Zenconsole&trade;.</p>
+      <p class="font-medium text-slate-700">Unified, simple, and fast enterprise Secure Access Service Edge (SASE), delivered through the OPNsense nodes you already operate.</p>
     </div>
     <a href="#demo" class="inline-flex items-center px-7 py-3.5 rounded-xl bg-orange-500 text-white font-medium hover:bg-orange-600 transition shadow-sm">Request a Demo</a>
     <p class="text-sm text-slate-500 mt-5">Deploys in minutes. No cloud backhaul. No vendor lock-in.</p>
@@ -63,7 +66,7 @@
   <div class="max-w-5xl mx-auto">
     <h2 class="text-3xl sm:text-4xl font-semibold text-center text-slate-900 mb-6">Why Customers Pick Zenarmor SASE Over Zscaler, Cato, or Netskope</h2>
     <p class="text-center text-slate-600 text-base sm:text-lg max-w-3xl mx-auto mb-12 leading-relaxed">
-      Zenarmor is built for how people actually work &mdash; in the office, at home, in a coffee shop, or on a plane. <span class="font-semibold text-navy-900">24&times;7&times;365 enterprise grade protection</span> follows your users and data wherever they go, running on the OPNsense infrastructure you already operate.
+      Zenarmor is built for how people actually work, in the office, at home, in a coffee shop, or on a plane. <span class="font-semibold text-navy-900">24&times;7&times;365 enterprise grade protection</span> follows your users and data wherever they go, running on the OPNsense infrastructure you already operate.
     </p>
     <div class="overflow-x-auto rounded-2xl border border-slate-200 bg-white shadow-sm">
       <table class="w-full text-left text-sm">
