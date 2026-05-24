@@ -7,20 +7,23 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        fontFamily: { sans: ['Inter','ui-sans-serif','system-ui','sans-serif'] },
-        colors: {
-          navy:   { 50:'#eef0fb', 100:'#d4d9f3', 500:'#2a31a0', 700:'#151b75', 800:'#0d1259', 900:'#0a0f4f' },
-          orange: { 50:'#fff4e5', 100:'#ffe1bf', 500:'#ff8b00', 600:'#e67a00', 700:'#b35f00' }
-        }
-      }
-    }
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<style type="text/tailwindcss">
+  @theme {
+    --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+    --color-navy-50: #eef0fb;
+    --color-navy-100: #d4d9f3;
+    --color-navy-500: #2a31a0;
+    --color-navy-700: #151b75;
+    --color-navy-800: #0d1259;
+    --color-navy-900: #0a0f4f;
+    --color-orange-50: #fff4e5;
+    --color-orange-100: #ffe1bf;
+    --color-orange-500: #ff8b00;
+    --color-orange-600: #e67a00;
+    --color-orange-700: #b35f00;
   }
-</script>
+</style>
 <style>
   body { font-family: 'Inter', sans-serif; background: radial-gradient(circle at top, #f8fafc 0%, #f1f5f9 100%); min-height: 100vh; }
 </style>
