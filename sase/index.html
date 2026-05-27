@@ -53,7 +53,7 @@
       <span class="bg-gradient-to-r from-slate-900 via-[#0057FF] to-[#F2AA55] bg-clip-text text-transparent">Stack on OPNsense<br />With Zenarmor.</span>
     </h1>
     <div class="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto mb-10 space-y-4">
-      <p>A radically simple distributed network security platform that deploys anywhere in minutes. Enforce security at the nearest point and manage everything from a single unified system. Zenarmor SASE delivers NGFW, ZTNA, Secure Web Gateway, CASB, DLP, and DNS security through a unified Single-App, Single-Stack architecture, with centralized policy management and visibility provided by Zenconsole&trade;.</p>
+      <p>A radically simple distributed network security platform that deploys anywhere in minutes. Enforce security at the nearest point and manage everything from a single unified system. Zenarmor Secure Access Service Edge (SASE) helps protect your users on or off-network, wherever they want to work with centralized policy management and visibility provided by Zenconsole&trade;.</p>
       <p class="font-medium text-slate-700">Unified, simple, and fast enterprise SASE deployed directly on the OPNsense nodes you already operate.</p>
     </div>
     <a href="#demo" class="inline-flex items-center px-7 py-3.5 rounded-xl bg-orange-500 text-white font-medium hover:bg-orange-600 transition shadow-sm">Request a Demo</a>
@@ -72,31 +72,17 @@
       <table class="w-full text-left text-sm">
         <thead class="bg-slate-100 text-slate-900">
           <tr>
-            <th class="px-5 py-4 font-semibold">Feature</th>
+            <th class="px-5 py-4 font-semibold">Benefit</th>
             <th class="px-5 py-4 font-semibold text-navy-900">Zenarmor</th>
             <th class="px-5 py-4 font-semibold">Other vendors</th>
           </tr>
         </thead>
         <tbody class="divide-y divide-slate-200 text-slate-700">
-          <tr><td class="px-5 py-4 font-medium text-slate-900">Architecture</td><td class="px-5 py-4 bg-orange-50/40">Single platform (one app, one stack, one pass)</td><td class="px-5 py-4 text-slate-500">Multi-product architecture (ZIA + ZPA + ZDX)</td></tr>
-          <tr><td class="px-5 py-4 font-medium text-slate-900">Deployment Speed</td><td class="px-5 py-4 bg-orange-50/40">Minutes (Plug &amp; Secure)</td><td class="px-5 py-4 text-slate-500">PAC file management and portal fragmentation cited as ongoing operational burdens</td></tr>
-          <tr><td class="px-5 py-4 font-medium text-slate-900">Inspection Latency</td><td class="px-5 py-4 bg-orange-50/40">Sub-1ms (local inspection, no backhaul)</td><td class="px-5 py-4 text-slate-500">20&ndash;300ms+ depending on proximity to vendor PoP</td></tr>
-          <tr><td class="px-5 py-4 font-medium text-slate-900">Throughput Performance</td><td class="px-5 py-4 bg-orange-50/40">No performance loss</td><td class="px-5 py-4 text-slate-500">Users report 60&ndash;80% throughput loss on large file transfers</td></tr>
-          <tr><td class="px-5 py-4 font-medium text-slate-900">Enforcement Location</td><td class="px-5 py-4 bg-orange-50/40">At the point of connection (endpoint, gateway, or cloud)</td><td class="px-5 py-4 text-slate-500">Routed through vendor cloud (global PoP infrastructure)</td></tr>
-          <tr><td class="px-5 py-4 font-medium text-slate-900">Data Control &amp; Sovereignty</td><td class="px-5 py-4 bg-orange-50/40">Stays within your environment (no external routing required)</td><td class="px-5 py-4 text-slate-500">Traffic processed in vendor-controlled cloud</td></tr>
-          <tr><td class="px-5 py-4 font-medium text-slate-900">Total Cost of Ownership</td><td class="px-5 py-4 bg-orange-50/40">Single-platform pricing (low TCO, predictable)</td><td class="px-5 py-4 text-slate-500">Among the most expensive SASE platforms</td></tr>
-          <tr><td class="px-5 py-4 font-medium text-slate-900">Dependency on External Infrastructure</td><td class="px-5 py-4 bg-orange-50/40">None (enforcement runs locally)</td><td class="px-5 py-4 text-slate-500">Required (dependent on cloud PoPs)</td></tr>
-          <tr><td class="px-5 py-4 font-medium text-slate-900">Deployment Model</td><td class="px-5 py-4 bg-orange-50/40">On-premises, endpoint, cloud, hybrid, edge &mdash; your choice</td><td class="px-5 py-4 text-slate-500">Cloud-only; no on-premises enforcement option</td></tr>
-          <tr><td class="px-5 py-4 font-medium text-slate-900">ZTNA / Zero Trust Private Access</td><td class="px-5 py-4 bg-orange-50/40">P2P mesh, application-level, no PoP dependency</td><td class="px-5 py-4 text-slate-500">ZPA available but routes through vendor cloud brokers</td></tr>
-          <tr><td class="px-5 py-4 font-medium text-slate-900">NGFW / FWaaS</td><td class="px-5 py-4 bg-orange-50/40">Full NGFW, locally enforced</td><td class="px-5 py-4 text-slate-500">Cloud firewall available but not a full NGFW replacement</td></tr>
-          <tr><td class="px-5 py-4 font-medium text-slate-900">SWG</td><td class="px-5 py-4 bg-orange-50/40">Inline, locally enforced</td><td class="px-5 py-4 text-slate-500">Market-leading cloud SWG</td></tr>
-          <tr><td class="px-5 py-4 font-medium text-slate-900">CASB</td><td class="px-5 py-4 bg-orange-50/40">Inline CASB with Shadow IT discovery</td><td class="px-5 py-4 text-slate-500">Available (inline and API-based)</td></tr>
-          <tr><td class="px-5 py-4 font-medium text-slate-900">DLP</td><td class="px-5 py-4 bg-orange-50/40">Built-in, roadmap enhancements in progress</td><td class="px-5 py-4 text-slate-500">Available, but advanced tiers require premium licensing</td></tr>
-          <tr><td class="px-5 py-4 font-medium text-slate-900">DNS Security</td><td class="px-5 py-4 bg-orange-50/40">Native</td><td class="px-5 py-4 text-slate-500">Available</td></tr>
-          <tr><td class="px-5 py-4 font-medium text-slate-900">IoT / OT / Legacy Device Support</td><td class="px-5 py-4 bg-orange-50/40">Native support at the edge (Hybrid SASE)</td><td class="px-5 py-4 text-slate-500">Limited; agent-based model excludes agentless devices</td></tr>
-          <tr><td class="px-5 py-4 font-medium text-slate-900">Offline / VPN-Off Protection</td><td class="px-5 py-4 bg-orange-50/40">Always-on local enforcement, even offline</td><td class="px-5 py-4 text-slate-500">Enforcement requires connectivity to vendor cloud</td></tr>
-          <tr><td class="px-5 py-4 font-medium text-slate-900">Compliance / Regulatory Alignment</td><td class="px-5 py-4 bg-orange-50/40">Data stays within your network, compliance-friendly by design</td><td class="px-5 py-4 text-slate-500">All traffic processed by vendor, requires data handling agreements</td></tr>
-          <tr><td class="px-5 py-4 font-medium text-slate-900">Single-Vendor Simplicity</td><td class="px-5 py-4 bg-orange-50/40">One app, one stack, one console</td><td class="px-5 py-4 text-slate-500">ZIA, ZPA, and ZDX are separate products with separate consoles</td></tr>
+          <tr class="bg-orange-50/60"><td class="px-5 py-4 font-medium text-slate-900">Data Sovereignty &mdash; Keep Sensitive Traffic in Your Jurisdiction</td><td class="px-5 py-4">Inspection happens on your premises, on your devices, with your keys &mdash; data never leaves the jurisdiction you control</td><td class="px-5 py-4 text-slate-500">All traffic processed in vendor-controlled cloud; compliance requires data-handling agreements</td></tr>
+          <tr><td class="px-5 py-4 font-medium text-slate-900">Live in Minutes, Not Months</td><td class="px-5 py-4 bg-orange-50/40">New sites and tenants productive the same day they sign &mdash; deploys in minutes</td><td class="px-5 py-4 text-slate-500">PAC files, portal fragmentation, and rollout projects measured in weeks or months</td></tr>
+          <tr><td class="px-5 py-4 font-medium text-slate-900">Less Complexity, Easier Management</td><td class="px-5 py-4 bg-orange-50/40">One unified platform &mdash; lower operational overhead, fewer consoles, one vendor relationship</td><td class="px-5 py-4 text-slate-500">Multi-product architecture (e.g., ZIA + ZPA + ZDX) with separate consoles and reconciliation work</td></tr>
+          <tr><td class="px-5 py-4 font-medium text-slate-900">Instant Connection, Better User Experience</td><td class="px-5 py-4 bg-orange-50/40">~0.2 ms local inspection &mdash; users feel like security isn't there</td><td class="px-5 py-4 text-slate-500">20 ms minimum added on every connection, up to 300 ms+ depending on PoP distance</td></tr>
+          <tr><td class="px-5 py-4 font-medium text-slate-900">No Bandwidth Throttling</td><td class="px-5 py-4 bg-orange-50/40">Full line-rate throughput &mdash; no artificial or administrative caps</td><td class="px-5 py-4 text-slate-500">Users report 60&ndash;80% throughput loss on large file transfers</td></tr>
         </tbody>
       </table>
     </div>
@@ -107,32 +93,32 @@
   </div>
 </section>
 
+<!-- THE SOLUTION (moved above the problem section) -->
+<section class="px-6 py-24 bg-navy-900 text-white">
+  <div class="max-w-4xl mx-auto text-center">
+    <h2 class="text-3xl sm:text-4xl font-semibold mb-4">Meet Zenarmor SASE</h2>
+    <p class="text-lg text-navy-100 mb-8 max-w-2xl mx-auto">A complete Secure Access Service Edge platform with NGFW, ZTNA, Secure Web Gateway, CASB, DLP, and DNS security, running on the OPNsense nodes you already trust and managed from a single cloud console.</p>
+    <!-- DEPLOY ANYWHERE -->
+    <p class="text-navy-100 text-sm sm:text-base mb-10 leading-relaxed max-w-2xl mx-auto">
+      <span class="font-semibold text-white">Deploy security where you need it.</span> Zenarmor SASE runs directly on OPNsense gateways, branch firewalls, cloud gateways (AWS, Azure, GCP), endpoints and roaming users, and containerized environments.
+    </p>
+
+    <!-- Video placeholder hidden until asset is ready
+    <div class="aspect-video bg-black/30 rounded-xl border border-white/10 flex items-center justify-center text-navy-100">
+      <span>▶ See Zenarmor SASE in action, 2 min</span>
+    </div>
+    -->
+
+  </div>
+</section>
+
 <!-- THE PROBLEM -->
 <section class="px-6 py-24">
   <div class="max-w-5xl mx-auto">
     <h2 class="text-3xl sm:text-4xl font-semibold text-center text-slate-900 mb-6">Cloud SASE Solved One Problem and Created Others</h2>
 
-    <div class="max-w-3xl mx-auto mb-14 space-y-10">
-      <p class="text-slate-600 leading-relaxed text-center">Legacy stacks were fragmented, so the industry pushed everything into the vendor's cloud. As workloads moved to the cloud, security moved with them. Now every endpoint has to ship its traffic to a distant PoP for inspection before it can reach the app next door. Additionally, your data leaves your jurisdiction to get inspected.</p>
+    <p class="text-slate-600 leading-relaxed text-center max-w-3xl mx-auto mb-14">By pushing every packet to a distant vendor PoP for inspection, cloud-only SASE introduced latency, throttled throughput, locked customers into proprietary clouds, and sent sensitive traffic out of the jurisdictions where it belongs.</p>
 
-      <div>
-        <h3 class="text-xl sm:text-2xl font-semibold text-slate-900 text-center mb-4">Zenarmor SASE Is Built Differently</h3>
-        <p class="text-slate-600 leading-relaxed text-center mb-3">Traditional SASE platforms typically route traffic through vendor-operated cloud inspection infrastructure before enforcing security policies.</p>
-        <p class="text-slate-600 leading-relaxed text-center mb-3">Zenarmor SASE uses a distributed architecture where security inspection happens locally at the point of access: on endpoints, gateways, branch infrastructure, or cloud environments you already control, while centralized visibility and policy management remain unified through Zenconsole&trade;.</p>
-        <p class="text-slate-600 leading-relaxed text-center">This enables organizations to deploy modern SASE services without mandatory traffic backhaul, infrastructure replacement, or dependence on vendor-operated inspection points.</p>
-      </div>
-
-      <div>
-        <h3 class="text-xl sm:text-2xl font-semibold text-slate-900 text-center mb-4">Deploy Zenarmor SASE Across Your Existing Infrastructure</h3>
-        <ul class="grid sm:grid-cols-2 gap-x-8 gap-y-2 text-slate-700 max-w-2xl mx-auto">
-          <li class="check">Endpoints and roaming users</li>
-          <li class="check">Branch and edge gateways</li>
-          <li class="check">Cloud VPCs (AWS, Azure, GCP)</li>
-          <li class="check">MSP/MSSP-managed environments</li>
-          <li class="check">Containerized deployments</li>
-        </ul>
-      </div>
-    </div>
     <div class="grid md:grid-cols-3 gap-6">
       <div class="p-6 rounded-xl bg-slate-50 flex flex-col">
         <h3 class="font-semibold text-slate-900 mb-2">Backhaul Latency</h3>
@@ -149,8 +135,8 @@
         <p class="text-slate-600 text-sm">Sensitive traffic processed in a foreign jurisdiction creates compliance and privacy headaches.</p>
       </div>
       <div class="p-6 rounded-xl bg-slate-50 flex flex-col">
-        <h3 class="font-semibold text-slate-900 mb-2">Vendor Lock-In</h3>
-        <p class="text-slate-600 text-sm">Once your edge lives in someone else's cloud, leaving means re-platforming everything at once.</p>
+        <h3 class="font-semibold text-slate-900 mb-2">Forklift Refresh Required</h3>
+        <p class="text-slate-600 text-sm">Most cloud SASE platforms require you to retire perfectly good firewalls and roll out new vendor-specific appliances at every site, an expensive, disruptive hardware refresh just to get started.</p>
       </div>
       <div class="p-6 rounded-xl bg-slate-50 flex flex-col">
         <h3 class="font-semibold text-slate-900 mb-2">Renewal Tax</h3>
@@ -162,39 +148,6 @@
         <p class="text-slate-600 text-sm">ZTNA without inline inspection just authenticates the door, it doesn't watch what walks through.</p>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- THE SOLUTION -->
-<section class="px-6 py-24 bg-navy-900 text-white">
-  <div class="max-w-4xl mx-auto text-center">
-    <h2 class="text-3xl sm:text-4xl font-semibold mb-4">Meet Zenarmor SASE</h2>
-    <p class="text-lg text-navy-100 mb-12 max-w-2xl mx-auto">A complete Secure Access Service Edge platform with NGFW, ZTNA, Secure Web Gateway, CASB, DLP, and DNS security, running on the OPNsense nodes you already trust and managed from a single cloud console.</p>
-    <div class="grid sm:grid-cols-3 gap-4 mb-12 text-sm text-left">
-      <div class="bg-white/10 rounded-lg p-5">
-        <div class="font-bold text-white mb-1">No cloud backhaul</div>
-        <p class="text-navy-100 text-xs leading-relaxed">Traffic inspected at your edge means single-digit-ms local latency, not the 11–280&nbsp;ms hair-pin tax of cloud SASE PoPs.</p>
-      </div>
-      <div class="bg-white/10 rounded-lg p-5">
-        <div class="font-bold text-white mb-1">No new appliances</div>
-        <p class="text-navy-100 text-xs leading-relaxed">Runs on the hardware you already own. Zero forklift refresh.</p>
-      </div>
-      <div class="bg-white/10 rounded-lg p-5">
-        <div class="font-bold text-white mb-1">Sovereign by Design</div>
-        <p class="text-navy-100 text-xs leading-relaxed">Inspection happens on your premises, on your devices, with your keys. Traffic is never sent to a vendor cloud, so sensitive data never leaves the jurisdiction you control.</p>
-      </div>
-    </div>
-    <!-- DEPLOY ANYWHERE -->
-    <p class="text-navy-100 text-sm sm:text-base mb-10 leading-relaxed">
-      <span class="font-semibold text-white">Deploy security where you need it.</span> Zenarmor SASE runs directly on OPNsense gateways, branch firewalls, cloud gateways (AWS, Azure, GCP), endpoints and roaming users, and containerized environments.
-    </p>
-
-    <!-- Video placeholder hidden until asset is ready
-    <div class="aspect-video bg-black/30 rounded-xl border border-white/10 flex items-center justify-center text-navy-100">
-      <span>▶ See Zenarmor SASE in action, 2 min</span>
-    </div>
-    -->
-
   </div>
 </section>
 
